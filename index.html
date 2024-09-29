@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #container { width: 600px; margin: 0 auto; padding: 20px; }
+        textarea { width: 100%; height: 150px; margin-bottom: 10px; }
+        select, button { margin-right: 10px; }
+        .output { border: 1px solid #ccc; padding: 10px; height: 150px; background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Simple Translation Page</h1>
+        <label for="input">Enter text to translate:</label>
+        <textarea id="input"></textarea>
+        
+        <div>
+            <label for="source-lang">From:</label>
+            <select id="source-lang">
+                <option value="en">English</option>
+                <option value="zh">Chinese</option>
+                <!-- Add more languages here -->
+            </select>
+            
+            <label for="target-lang">To:</label>
+            <select id="target-lang">
+                <option value="zh">Chinese</option>
+                <option value="en">English</option>
+                <!-- Add more languages here -->
+            </select>
+            
+            <button id="translate-btn">Translate</button>
+        </div>
+        
+        <h2>Translation:</h2>
+        <div id="output" class="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('translate-btn').addEventListener('click', function() {
+            var inputText = document.getElementById('input').value;
+            var sourceLang = document.getElementById('source-lang').value;
+            var targetLang = document.getElementById('target-lang').value;
+            
+            // Use a translation API or a function to process the inputText
+            // For now, just display the input text as a placeholder
+            document.getElementById('output').innerText = "Translating: " + inputText;
+        });
+    </script>
+</body>
+</html>
